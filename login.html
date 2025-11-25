@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title id="title"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Cache-Control" content="no-cache">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/blink.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <!--<script src="js/javascript.js"></script>-->
+
+</head>
+
+<body>
+  <div class="bg">
+    
+        $(if chap-id)
+	<form name="sendin" action="$(link-login-only)" method="post">
+		<input type="hidden" name="username" />
+		<input type="hidden" name="password" />
+		<input type="hidden" name="dst" value="http://10.0.0.1/status" />
+		<input type="hidden" name="popup" value="true" />
+	</form>
+	
+	<script type="text/javascript" src="md5.js"></script>
+	<script type="text/javascript">
+	
+	    function doLogin() {
+		document.sendin.username.value = document.login.username.value;
+		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+		document.sendin.submit();
+		return false;
+	    }
+	
+	</script>
+$(endif)
+            
+            <div id="main" class="main">
+            <div class="container">
+
+
+<div class="slidingImage">
+  <div class="slider">
+    <div class="slides">
+      <div class="slide"><img src="img/slides/white-xmas.png"> </div>
+      <div class="slide"><img src="img/slides/red-xmas.png"> </div>
+      <div class="slide"><img src="img/slides/white-xmas.png"> </div>
+      <div class="slide"><img src="img/slides/red-xmas.png"></div>
+      <div class="slide"><img src="img/slides/white-xmas.png"> </div>
+    </div>
+  </div>
+</div>
+            <div class="box">
+               <!-- === Add this where your small buttons (Voucher / Member) are rendered === -->
+<div class="button-row" style="display:flex; gap:8px; justify-content:center; margin-top:10px;">
+  <!-- NEW: Wi‑Fi Info button -->
+  <button class="small-button" type="button" id="wifiInfoBtn">
+    <span class="icon"></span> Show Network Details
+  </button>
+</div>
+
+<!-- === NEW: Wi‑Fi Info panel (hidden by default) === -->
+<div id="wifiInfoPanel" class="wifi-info card" style="display:none; margin-top:12px;">
+  <h3 class="card-title">Information & Terms</h3>
+
+  <div class="notice">
+    <!--<strong>About the Network</strong>-->
+    <ul style="text-align: left";'>
+      <li>This network is being managed by <strong>Cloud Connect Systems</strong>.</li>
+      <li>Our robust network can handle up to 1,000 clients connected simultaneously. Rest assured that your connection will not be affected by any network congestion.</li>
+      <li>You are <strong>not allowed</strong> to use our network for illegal, malicious, and other activities that's punishable by law.</li>
+      <li>You are connecting to a network with strict set of rules and filters for network security.</li>
+      <li>By connecting to our network <strong>you agree to our short terms and description</strong> you read above.</li>
+    </ul>
+    Menu Selection: Voucher, Member or Scan QR
+  </div>
+  <!-- Optional: quick link back to login -->
+  <a href="$(link-login)">Refresh Login Page</a>
+</div>
+<!-- === NEW: Inline JS to toggle the panel === -->
+<script>
+  (function () {
+    var btn = document.getElementById('wifiInfoBtn');
+    var panel = document.getElementById('wifiInfoPanel');
+    if (btn && panel) {
+      btn.addEventListener('click', function () {
+        var isHidden = panel.style.display === 'none' || panel.style.display === '';
+        panel.style.display = isHidden ? 'block' : 'none';
+        // Optional visual cue: scroll into view when opened
+        if (isHidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  })();
+</script>
+<br/>
+                <button id="btnvrc" class="small-button" onclick="voucher();"><i class="icon icon-ticket">&#xe802;</i>&nbsp;Voucher</button>
+                <button id="btnmem" class="small-button" onclick="member();"><i class="icon icon-user-circle-o">&#xf2be;</i>&nbsp;Member</button>
+                <button id="qr" class="small-button" onclick="window.location='https://laksa19.github.io/myqr';"> <i class="icon icon-qrcode">&#xe801;</i>&nbsp;Scan QR</button>
+            </div>
+            <br/>
+            <div class="blinking" id="infologin"></div>
+
+            <form autocomplete="off" name="login" action="$(link-login-only)" method="post" $(if chap-id) onSubmit="return doLogin()"
+                $(endif)>
+                <input type="hidden" name="dst" value="http://10.0.0.1/status" />
+                <input type="hidden" name="popup" value="true" />
+                <input class="username" name="username" type="text" value="$(username)" />
+                <input class="password" name="password" placeholder="Password" type="hidden" />
+                $(if error)<div class="notice">$(error)</div>$(endif)
+                <button class="button" type="submit"><i class="icon icon-login">&#xe803;</i>  Connect</button>
+
+            </form>
+            <br/>
+                 <!-- === Add this where your small buttons (Voucher / Member) are rendered === -->
+<div class="button-row" style="display:flex; gap:8px; justify-content:center; margin-top:10px;">
+  <!-- NEW: Wi‑Fi Info button -->
+  <button class="small-button" type="button" id="wifiRateBtn">
+    <span class="icon"></span>Show Wifi Rates
+  </button>
+</div>
+<!--=== NEW: Wi‑Fi Info panel (hidden by default) === -->
+<div id="wifiRatePanel" class="wifi-info card" style="display:none; margin-top:12px;">
+  <h3 class="card-title">Promo Rates</h3>
+  <table class="table" style="margin-top:10px;">
+    <thead>
+      <tr>
+        <th>Plan</th>
+        <th>Speed</th>
+        <th>Validity</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Daily Pass</td>
+        <td>Up to 10 Mbps</td>
+        <td>1 Day</td>
+        <td>₱10</td>
+      </tr>
+      <tr>
+        <td>Weekly Pass</td>
+        <td>Up to 10 Mbps</td>
+        <td>7 Days</td>
+        <td>₱50</td>
+      </tr>
+      <tr>
+        <td>Combo Pass</td>
+        <td>Up to 10 Mbps</td>
+        <td>14 Days</td>
+        <td>₱140</td>
+      </tr>
+      <tr>
+        <td>Monthly Pass</td>
+        <td>Up to 10 Mbps</td>
+        <td>30 Days</td>
+        <td>₱250</td>
+      </tr>
+      <tr>
+        <td>Lakad Matatag Pass</td>
+        <td>Up to 15 Mbps</td>
+        <td>60 Days<br/>90 Days</td>
+        <td>₱500<br/><br/>₱700</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="notice" style="margin-top:10px;">
+    <strong>How to Purchase a Voucher:</strong>
+    <ul style="text-align: left;">
+      <!--<li>Message us on Facebook: <a href="#"></a></li>-->
+      <li>Call or text: <strong>+63 962 660 6116</strong></li>
+      <li>Pay using GCash #: 09604431990 and receive the voucher on the number you used for payment.</li>
+    </ul>
+  </div>
+
+  <!-- Optional: quick link back to login -->
+  <a href="$(link-login)">Refresh Login Page</a>
+</div>
+
+
+
+<script>
+  (function () {
+    var btn = document.getElementById('wifiRateBtn');
+    var panel = document.getElementById('wifiRatePanel');
+    if (btn && panel) {
+      btn.addEventListener('click', function () {
+        var isHidden = panel.style.display === 'none' || panel.style.display === '';
+        panel.style.display = isHidden ? 'block' : 'none';
+        // Optional visual cue: scroll into view when opened
+        if (isHidden) panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      });
+    }
+  })();
+</script>
+            <br/>
+            $(if trial == 'yes')
+            <div class="box"><a style="text-decoration: none" href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click here for 15 minutes Free Trial&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+            </div>
+            $(endif)
+                <br />
+            <div>
+                <div>
+            </div>
+        </div>
+    </div>
+        <br />
+        <div class="box" style="color:#e0e0e0;">
+            <div class="box" style="color:#e0e0e0;">
+            <strong>Copyright &copy; 2023. All rights reserved.</strong><br /><br/>
+            <a id="cloud" style="color:#e0e0e0; text-decoration:underline; display:block" href="$(link-login)" target="_parent">Cloud Guest Hotspot</a>
+
+        </div>   
+        </div>
+        </div>
+
+<script type="text/javascript">
+
+var titleElement = document.getElementById('title');
+    if (titleElement) {
+ titleElement.innerHTML = "$(hostname) &gt; login";
+    }
+
+//document.login.username.focus();
+
+var infologin = document.getElementById('infologin');
+infologin.innerHTML = "Choose your preferred login method";
+
+// login page 2 
+var username = document.login.username;
+var password = document.login.password;
+
+username.placeholder = "Voucher Code";
+
+// set password = username
+function setpass() {
+    var user = username.value
+    //user = user.toLowerCase();
+    username.value = user;
+    password.value = user;
+}
+
+username.onkeyup = setpass;
+
+// change to voucher mode
+function voucher() {
+    //username.focus();
+    username.onkeyup = setpass;
+    username.placeholder = "Your voucher code here";
+    username.style = "border-radius:3px 3px 0px 0px;"
+    password.type = "hidden";
+    infologin.innerHTML = "Enter your Guest Voucher";
+}
+
+// change to member mode
+function member() {
+    //username.focus();
+    username.onkeyup = "";
+    username.placeholder = "Enter User ID";
+    username.style = "border-radius:3px 3px 0px 0px;"
+    password.type = "password";
+    password.placeholder = "Enter User Password";
+    password.style = "border-radius:3px 3px 0px 0px;"
+    infologin.innerHTML = "Enter Authorized User Credentials";
+}
+
+</script>
+
+<!-- background music -->
+<audio id="xmasAudio" src="audio/jbells.mp3" preload="auto" loop autoplay style="display:none"></audio>
+<script>
+// Attempt autoplay; if blocked by browser policy, play on first user interaction.
+(function(){
+  const audio = document.getElementById('xmasAudio');
+  if (!audio) return;
+  audio.volume = 0.25; // subtle background volume
+  const tryPlay = () => {
+    const p = audio.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(() => {
+        // Autoplay blocked; wait for first interaction then play
+        const resume = () => {
+          audio.play().catch(()=>{});
+          window.removeEventListener('pointerdown', resume, { once: true });
+        };
+        window.addEventListener('pointerdown', resume, { once: true });
+      });
+    }
+  };
+  // Try once on load
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    tryPlay();
+  } else {
+    document.addEventListener('DOMContentLoaded', tryPlay, { once: true });
+  }
+})();
+</script>
+
+</body>
+
+</html>

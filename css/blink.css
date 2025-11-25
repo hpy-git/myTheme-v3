@@ -1,0 +1,23 @@
+/*Blinking Effect*/
+.blinking{
+  animation:blinkingText 0.90s infinite;
+  margin-bottom:10px;
+  text-align:center;
+}
+@keyframes blinkingText{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
+.blinking1{
+  animation:blink 3s infinite;
+  margin-bottom:10px;
+  text-align:center;
+  
+}
+@keyframes blink{
+0%{opacity: 0;}
+25%{opacity: .5;}
+50%{opacity: .75}
+100%{opacity: 1;}
+}
