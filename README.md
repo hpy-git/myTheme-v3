@@ -80,12 +80,12 @@
 > Actual raw and live screenshots
 
 - **Login Raw Page**  
-  ![Login Page](screenshot/horizon/horizon_login.png)
+  ![Login Page](screenshot/xmas-theme/login-page.png)
 
 - **Login Actual Live Page**  
 
 - **Status Raw Page**  
-  ![Status Page](screenshot/horizon/horizon_status.png)
+  ![Status Page](screenshot/xmas-theme/status-page.png)
 
   - **Status Actual Live Page**  
 
