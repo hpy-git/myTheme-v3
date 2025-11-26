@@ -1,5 +1,5 @@
 
-# myTheme-v3 — MikroTik Hotspot Theme
+# myTheme-v3 — MikroTik Hotspot Theme | Christmas Edition
 
 > A modern, responsive, and highly customized theme for MikroTik Hotspot captive portal created by HPY for MikroTik users.
 
