@@ -64,7 +64,7 @@
   - It should look like this:
     - ![!Zip_File](screenshot/installation/zip-extracted.png)
 - Upload to your MikroTik router/device files.
-    - ![!Mikrotik_Files](screenshot/installation/mtik-files.png)
+    - ![!Mikrotik_Files](hpy-git/myTheme-v3/screenshot/installation/zip-extracted.png)
 - Change your Hotspot HTML directory.
     - ![!Hotspot_Directory](screenshot/installation/html-dir.png)
     - ![!Select_Portal_Directory](screenshot/installation/select-dir.png)
