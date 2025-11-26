@@ -82,12 +82,9 @@
 - **Login Raw Page**  
   ![Login-Page](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/xmas-theme/login-page.png)
 
-- **Login Actual Live Page**  
-
 - **Status Raw Page**  
   ![Status-Page](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/xmas-theme/status-page.png)
 
-  - **Status Actual Live Page**  
 
 ## Compatibility
 
