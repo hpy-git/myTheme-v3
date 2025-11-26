@@ -49,11 +49,26 @@
 }
 
 
-#radio1:checked ~ .first { margin-left: 0; }
-#radio2:checked ~ .first { margin-left: -10%; }
-#radio3:checked ~ .first { margin-left: -20%; }
-#radio4:checked ~ .first { margin-left: -30%; }
-#radio5:checked ~ .first { margin-left: -40%; }
+/*Below is good for 5 pictures ONLY*/
+#radio1:checked ~ .first{
+	margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+	margin-left: -10%;
+}
+
+#radio3:checked ~ .first{
+	margin-left: -20%;
+}
+
+#radio4:checked ~ .first{
+	margin-left: -30%;
+}
+
+#radio5:checked ~ .first{
+	margin-left: -40%;
+}
 
 /*css for automatic navigation*/
 .navigation-auto{
@@ -96,4 +111,3 @@
 #radio5:checked ~ .navigation-auto .auto-btn5{
 	background: #0967F9
 }
-
