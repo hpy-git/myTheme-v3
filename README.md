@@ -80,10 +80,10 @@
 > Actual raw and live screenshots
 
 - **Login Raw Page**  
-  ![Login-Page](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/xmas-theme/login-page.png)
+  ![Login-Page](screenshot/xmas-theme/login-page.png)
 
 - **Status Raw Page**  
-  ![Status-Page](https://github.com/hpy-git/myTheme-v3/blob/main/screenshot/xmas-theme/status-page.png)
+  ![Status-Page](screenshot/xmas-theme/status-page.png)
 
 
 ## Compatibility
